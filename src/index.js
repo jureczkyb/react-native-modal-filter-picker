@@ -30,15 +30,15 @@ export default class ModalFilterPicker extends Component {
     }
   }
 
-  static getDerivedStateFromProps(newProps, prevProps) {
+  componentDidUpdate(prevProps) {
     if (
-      (!prevProps.visible && newProps.visible) ||
-      prevProps.options !== newProps.options
+      (!prevProps.visible && this.props.visible) ||
+      prevProps.options !== this.props.options
     ) {
-      return {
+      this.setState({
         filter: "",
         ds: newProps.options
-      }
+      });
     }
   }
 
