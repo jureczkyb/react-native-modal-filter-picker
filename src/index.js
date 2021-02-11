@@ -37,7 +37,7 @@ export default class ModalFilterPicker extends Component {
     ) {
       this.setState({
         filter: "",
-        ds: newProps.options
+        ds: this.props.options
       });
     }
   }
